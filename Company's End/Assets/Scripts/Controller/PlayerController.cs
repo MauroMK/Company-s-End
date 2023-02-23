@@ -5,15 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public CharacterController controller;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float speed = 12f;
+    [SerializeField] private float jumpHeight = 2f;
+    private float gravity = -15f;
+    private float groundDistance = 0.4f;
 
-    public float speed = 12f;
-    public float gravity = -15f;
-    public float groundDistance = 0.4f;
-    public float jumpHeight = 2f;
-
-    public Transform groundCheck;
-    public LayerMask groundMask;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundMask;
 
     Vector3 velocity;
     bool isGrounded;
